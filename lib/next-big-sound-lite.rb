@@ -4,7 +4,6 @@ require 'json'
 #for version 2.0 of the NBS API
 module NBS
   
-  
   def self.api_key=(key)
     @base = RestClient::Resource.new("http://#{key}.api2.nextbigsound.com")
   end  
