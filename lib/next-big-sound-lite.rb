@@ -3,7 +3,7 @@ require 'rest_client'
 #for version 2.0 of the NBS API
 module NBS
 
-  BASE = RestClient::Resource.new("http://#{KEY || 'key'}.api2.nextbigsound.com")
+  BASE = RestClient::Resource.new("http://#{const_defined? KEY ? KEY : 'key'}.api2.nextbigsound.com")
   
   class Artist
     
