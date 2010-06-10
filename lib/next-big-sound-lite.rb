@@ -3,12 +3,21 @@ require 'json'
 
 #for version 2.0 of the NBS API
 module NBS
-
-  BASE = RestClient::Resource.new("http://#{NBS.const_defined? :KEY ? KEY : 'key'}.api2.nextbigsound.com")
+  
+  
+  def self.api_key=(key)
+    @base = RestClient::Resource.new("http://#{key}.api2.nextbigsound.com")
+  end  
+  
+  def self.base
+    @base
+  end
+  
+  self.api_key = 'key'
   
   class Artist
     
-    @resource = BASE['artists']
+    @resource = NBS.base['artists']
     
     def self.view(id)
       res = @resource["view/#{id}.json"].get
@@ -30,7 +39,7 @@ module NBS
   
   class Genre
     
-    @resource = BASE['genres']
+    @resource = NBS.base['genres']
     
     def self.artist(id)
       res = @resource["artist/#{id}.json"].get
@@ -40,7 +49,7 @@ module NBS
   
   class Metric
     
-    @resource = BASE['metrics']
+    @resource = NBS.base['metrics']
     
     def self.profile(id)
       res = @resource["profile/#{id}.json"].get
@@ -55,7 +64,7 @@ module NBS
   
   class Profile
     
-    @resource = BASE['profiles']
+    @resource = NBS.base['profiles']
     
     def self.artist(id)
       res = @resource["artist/#{id}.json"].get
@@ -70,7 +79,7 @@ module NBS
   
   class Service
     
-    @resource = BASE['services']
+    @resource = NBS.base['services']
     
     def self.list
       JSON.parse(@resource['.json'].get)
@@ -80,7 +89,7 @@ module NBS
   
   class Track
     
-    @resource = BASE['tracks']
+    @resource = NBS.base['tracks']
     
     def self.artist(id)
       res = @resource["artist/#{id}.json"].get
@@ -96,7 +105,7 @@ module NBS
   
   class Youtube
     
-    @resource = BASE['youtube']
+    @resource = NBS.base['youtube']
     
     def self.artist(id)
       res = @resource["artist/#{id}.json"].get

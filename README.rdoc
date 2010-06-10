@@ -6,7 +6,7 @@ Done? Then you can use this API.
 
 First setup the gem to use your API key:
 
-  NBS::KEY = 'your_key'
+  NBS.api_key = 'your_key'
 
 The methods of this wrapper are organized in the same way as the subsections of the API docs. For example to call the resource 'view' on Artists you should call:
 
