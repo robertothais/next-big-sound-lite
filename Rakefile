@@ -3,7 +3,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('next-big-sound-lite', '0.1.1') do |p|
+Echoe.new('next-big-sound-lite', '0.1.3') do |p|
   p.description    = "Thin wrapper for the Next Big Sound API."
   p.url            = "http://github.com/rpbertp13/next-big-sound-lite"
   p.author         = "Roberto Thais"
