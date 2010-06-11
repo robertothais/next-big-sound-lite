@@ -3,3 +3,11 @@ README.rdoc
 Rakefile
 init.rb
 lib/next-big-sound-lite.rb
+lib/next-big-sound-lite/artist.rb
+lib/next-big-sound-lite/genre.rb
+lib/next-big-sound-lite/metric.rb
+lib/next-big-sound-lite/profile.rb
+lib/next-big-sound-lite/resource.rb
+lib/next-big-sound-lite/service.rb
+lib/next-big-sound-lite/track.rb
+lib/next-big-sound-lite/youtube.rb
