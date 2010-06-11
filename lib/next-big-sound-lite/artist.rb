@@ -23,7 +23,7 @@ module NBS
     end  
     
     def self.add(name)
-      res = resource["add.json?n=#{name}&k=#{NBS.private_key}"].get
+      res = resource["add.json?n=#{CGI.escape(name)}&k=#{NBS.private_key}"].get
       JSON.parse(res)
     end
   end

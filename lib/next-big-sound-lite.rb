@@ -2,6 +2,7 @@
 
 require 'rest_client'
 require 'json'
+require 'cgi'
 
 require 'next-big-sound-lite/resource'
 require 'next-big-sound-lite/artist'

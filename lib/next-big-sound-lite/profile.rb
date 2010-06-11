@@ -17,7 +17,7 @@ module NBS
     end
     
     def self.add(artist_id, url)
-      res = resource["add/#{artist_id}.json?u=#{url}&k=#{NBS.private_key}"].get
+      res = resource["add/#{artist_id}.json?u=#{CGI::escape(url)}&k=#{NBS.private_key}"].get
       JSON.parse(res)
     end
     
