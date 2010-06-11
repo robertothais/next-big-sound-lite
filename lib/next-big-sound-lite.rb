@@ -17,17 +17,13 @@ module NBS
   
   class << self
     attr_reader :base
-    attr_reader :private_key
+    attr_accessor :private_key
   end
   
   def self.api_key=(key)
     @base = RestClient::Resource.new("http://#{key}.api2.nextbigsound.com")
   end  
-  
-  def self.private_key=(key)
-    @private_key = key
-  end
-  
+    
   self.api_key = 'key'
 
 end
