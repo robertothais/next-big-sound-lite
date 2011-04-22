@@ -1,15 +1,9 @@
-# Rakefile
-require 'rubygems'
-require 'rake'
-require 'echoe'
+require 'bundler'
+Bundler::GemHelper.install_tasks
 
-Echoe.new('next-big-sound-lite', '0.2.0') do |p|
-  p.description    = "Thin wrapper for the Next Big Sound API."
-  p.url            = "http://github.com/rpbertp13/next-big-sound-lite"
-  p.author         = "Roberto Thais"
-  p.email          = "roberto.n.thais@gmail.com"
-  p.ignore_pattern = ["tmp/*", "script/*"]
-  p.development_dependencies = ["rest-client", "json"]
+require 'spec/rake/spectask'
+
+Spec::Rake::SpecTask.new(:spec) do |t|
+  t.spec_files = Dir.glob('spec/**/*_spec.rb')
+  t.spec_opts << '--format specdoc'
 end
-
-Dir["#{File.dirname(__FILE__)}/tasks/*.rake"].sort.each { |ext| load ext }

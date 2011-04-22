@@ -1,4 +1,4 @@
-module NBS
+module NextBigSoundLite
   
   class Genre < Resource
     
@@ -7,8 +7,8 @@ module NBS
     end
     
     def self.artist(id)
-      res = resource["artist/#{id}.json"].get
-      JSON.parse(res)
+      res = get resource["artist/#{id}.json"]
+      idfy res
     end
   end
   

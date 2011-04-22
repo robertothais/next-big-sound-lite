@@ -1,13 +1,16 @@
-module NBS
+require 'cgi'
+
+module NextBigSoundLite
   
   class Service < Resource
     
     def self.resource
-      super 'services'
+      super 'services.json'
     end
         
     def self.list
-      JSON.parse(resource['.json'].get)
+      res = get resource
+      idfy res
     end
     
   end

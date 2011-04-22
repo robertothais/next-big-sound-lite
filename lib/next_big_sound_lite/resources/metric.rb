@@ -1,4 +1,4 @@
-module NBS
+module NextBigSoundLite
   
   class Metric < Resource
     
@@ -7,13 +7,11 @@ module NBS
     end
     
     def self.profile(id)
-      res = resource["profile/#{id}.json"].get
-      JSON.parse(res)
+      raise NotImplementedError
     end
     
     def self.artist(id)
-      res = resource["artist/#{id}.json"].get
-      JSON.parse(res)
+      raise NotImplementedError
     end
   end
 
