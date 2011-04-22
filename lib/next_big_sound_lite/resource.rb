@@ -7,7 +7,12 @@ module  NextBigSoundLite
     
     def self.get(resource)
       begin
-        parse resource.get
+        res = parse resource.get
+        if block_given?
+          yield res
+        else
+          res
+        end
       # The API uses 400 Bad Request to indicate negative results
       # such as 'no results found'. 
       rescue RestClient::BadRequest => e

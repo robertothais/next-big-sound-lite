@@ -11,8 +11,9 @@ module NextBigSoundLite
     end
     
     def self.search(url)
-      res = get resource["search.json?u=#{CGI.escape(url)}"]
-      idfy res
+      get resource["search.json?u=#{CGI.escape(url)}"] do |res|
+        idfy res
+      end
     end
     
     def self.add(artist_id, profiles)

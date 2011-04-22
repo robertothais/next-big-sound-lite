@@ -9,8 +9,9 @@ module NextBigSoundLite
     end
         
     def self.list
-      res = get resource
-      idfy res
+      get resource do |res|
+        idfy res
+      end
     end
     
   end

@@ -11,8 +11,9 @@ module NextBigSoundLite
     end
     
     def self.search(q)
-      res = get resource["search.json?q=#{CGI.escape(q)}"]
-      idfy res
+      get resource["search.json?q=#{CGI.escape(q)}"] do |res|
+        idfy res
+      end
     end
     
     def self.ranking(type, ids)
