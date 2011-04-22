@@ -11,8 +11,8 @@ module NextBigSoundLite
     end
     
     def self.search(url)
-      get resource["search.json?u=#{CGI.escape(url)}"] do |res|
-        idfy res
+      get resource["search.json?u=#{CGI.escape(url)}"] do |response|
+        idfy response
       end
     end
     

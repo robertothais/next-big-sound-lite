@@ -9,10 +9,11 @@ module NextBigSoundLite
     def self.find(id)
       get resource["view/#{id}.json"]
     end
+    class << self; alias :view :find; end
     
     def self.search(q)
-      get resource["search.json?q=#{CGI.escape(q)}"] do |res|
-        idfy res
+      get resource["search.json?q=#{CGI.escape(q)}"] do |response|
+        idfy response
       end
     end
     

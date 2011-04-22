@@ -25,4 +25,3 @@ module NextBigSoundLite
   self.api_key = 'key'
 
 end
-

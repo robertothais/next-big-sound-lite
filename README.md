@@ -7,20 +7,14 @@ Done? Then you can use this API.
 
 First setup the gem to use your API key:
 
-    NBS.api_key = 'your_key'
+    NextBigSoundLite.api_key = 'my_key'
+    
+If you have a private key (for writing):
 
-The methods of this wrapper are organized in the same way as the subsections of the API docs. For example to call the endpoint 'view' on Artists you should call:
+    NextBigSoundLite.private_key = 'my_private_key'
 
-    NBS::Artist.view(id)
+The methods of this wrapper are organized in the same way as the subsections of the API docs. For example to call the endpoint 'profile' on Metrics you should call:
+    
+    NextBigSoundLite::Metric.profile(200, :start => 2.months.ago)
 
 Notice that the receiver has a singular name (ala Rails Models)
-
-Another example:
-
-    NBS::Metric.profile(id)
-
-Would call the Profile endpoint defined under the Metrics subsection. And so on.
-
-The one gotcha is the rank endpoint on the Artists subsection. It expects a type and an array of ids. E.g.
-
-    NBS::Artist.rank(type, [365, 654, 123])

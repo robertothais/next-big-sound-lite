@@ -7,8 +7,8 @@ module NextBigSoundLite
     end
     
     def self.artist(id)
-      get resource["artist/#{id}.json"] do |res|
-        idfy res
+      get resource["artist/#{id}.json"] do |response|
+        idfy response
       end
     end
   end
