@@ -1,7 +1,7 @@
 Next Big Sound Lite
 --
 
-This gem wraps the Next Big Sound JSON API. Read the API docs {here}[http://api3.nextbigsound.com].
+This gem wraps the Next Big Sound JSON API. Read the API docs (here)[http://api3.nextbigsound.com].
 
 Done? Then you can use this API.
 
